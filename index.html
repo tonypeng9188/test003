@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            font-family: "Helvetica Neue", Arial, sans-serif;
+            /* font-family: "標楷體", Arial, sans-serif; */
+            text-align: center;
+            margin: 5px;
+            font-size: 14px;
+        }
+
+        table {
+            border-collapse: collapse;
+            /* 合併表格邊框，使其為實線 */
+            margin: auto;
+            width: 720px;
+        }
+
+        th,
+        td {
+            border: 1px solid black;
+            /* 設定 1 像素的實線邊框 */
+            padding: 4px;
+            /* 添加內邊距，使內容與邊框有間隔 */
+            text-align: left;
+            /* 文字靠左對齊 
+            vertical-align: text-top;*/
+        }
+
+        /* 第5行第2列、第5行第3列的右边框蓋上空白 */
+
+        tr:nth-child(6) td:nth-child(2),
+        tr:nth-child(6) td:nth-child(3) {
+            border-right: 1px solid white;
+        }
+
+        th {
+            border-top: none;
+            border-left: none;
+            border-right: none;
+        }
+
+        #inputText_2 {
+            text-align: left;
+            /* 文字靠左對齊 */
+            vertical-align: top;
+            /* 文字靠上對齊 */
+            font-family: "Helvetica Neue", Arial, sans-serif;
+            /* 使用指定的字型 */
+            width: 100px;
+            font-size: 16px;
+            height: 70px;
+            /* 設定最大高度 */
+            box-sizing: border-box;
+            resize: none;
+            /* 禁止手動調整大小 */
+            overflow-y: hidden;
+            /* 隱藏垂直滾動條 */
+        }
+
+        #inputText_3 {
+            text-align: left;
+            /* 文字靠左對齊 */
+            vertical-align: top;
+            /* 文字靠上對齊 */
+            font-family: "Helvetica Neue", Arial, sans-serif;
+            /* 使用指定的字型 */
+            width: 100px;
+            font-size: 16px;
+            height: 70px;
+            /* 設定最大高度 */
+            box-sizing: border-box;
+            resize: none;
+            /* 禁止手動調整大小 */
+            overflow-y: hidden;
+            /* 隱藏垂直滾動條 */
+        }
+
+        #inputText_10 {
+            text-align: left;
+            /* 文字靠左對齊 */
+            vertical-align: top;
+            /* 文字靠上對齊 */
+            font-family: "Helvetica Neue", Arial, sans-serif;
+            /* 使用指定的字型 */
+            width: 550px;
+            font-size: 16px;
+            height: 300px;
+            /* 設定最大高度 */
+        }
+
+        #inputText_26 {
+            text-align: left;
+            /* 文字靠左對齊 */
+            vertical-align: top;
+            /* 文字靠上對齊 */
+            font-family: "Helvetica Neue", Arial, sans-serif;
+            /* 使用指定的字型 */
+            width: 550px;
+            font-size: 16px;
+            height: 50px;
+            /* 設定最大高度 */
+        }
+
+        .right-align {
+            text-align: right;
+            /* 文字靠右對齊 */
+            /* class="right-align" */
+        }
+
+        .gray-text {
+            color: gray;
+        }
+
+        #inputText_1 {
+            width: 270px;
+            height: 21px;
+            /* margin-bottom: 5px; */
+        }
+
+        #generateBtn {
+            padding: 10px;
+            font-size: 16px;
+            width: 300px;
+            height: 70px;
+        }
+    </style>
+</head>
+
+<body>
+    <table id="mytable">
+        <tr>
+            <th style="font-size: 30px;text-align: center;" colspan="7">交 通 部 公 路 局 災 害 通 報 單(局屬單位適用)</th>
+        </tr>
+        <tr>
+            <td colspan="2" style="font-size: 24px;text-align: center;"><b>傳 送 機 關 ( 單 位 )</b></td>
+            <td style="font-size:15px;"><b>通報時間</b></td>
+            <td colspan="4">
+                <input type="text" id="inputText_1" name="date_1" placeholder="年 月 日 時 分..." style="font-size: 16px;">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" rowspan="3">
+                <input type="checkbox" id="checkbox1" name="checkbox1">
+                <label for="checkbox1">行政院(災害防救辦公室)&ensp;(02)8912-7160</label><br>
+                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;(02)8912-7161<br>
+                <input type="checkbox" id="checkbox2" name="checkbox2">
+                <label for="checkbox2">國家運輸安全調查委員會&nbsp;(02)8912-7397</label><br>
+                <input type="checkbox" id="checkbox3" name="checkbox3">
+                <label for="checkbox3">大陸委員會&ensp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;(02)2397-5293</label><br>
+                <input type="checkbox" id="checkbox4" name="checkbox4" checked="checked">
+                <label for="checkbox4">交通部部長室&ensp;&emsp;&emsp;&emsp;&emsp;&emsp;(02)2389-6009</label><br>
+                <input type="checkbox" id="checkbox5" name="checkbox5" checked="checked">
+                <label for="checkbox5">交通部政務次長室&ensp;&emsp;&emsp;&emsp;(02)2381-1892</label><br>
+                <input type="checkbox" id="checkbox6" name="checkbox6" checked="checked">
+                <label for="checkbox6">交通部常務次長室&ensp;&emsp;&emsp;&emsp;(02)2382-1433</label><br>
+                <input type="checkbox" id="checkbox7" name="checkbox7" checked="checked">
+                <label for="checkbox7">交通部政務次長室&ensp;&emsp;&emsp;&emsp;(02)2371-7990</label><br>
+                <input type="checkbox" id="checkbox8" name="checkbox8" checked="checked">
+                <label for="checkbox8">交通部主任秘書室&ensp;&emsp;&emsp;&emsp;(02)2371-2536</label><br>
+                (主管公路交通事故—路政及道安司、公共運輸<br>及監理司)<br>
+                <input type="checkbox" id="checkbox9" name="checkbox9" checked="checked">
+                <label for="checkbox9">交通部公共運輸及監理司&ensp;(02)2389-9887</label><br>
+                <input type="checkbox" id="checkbox10" name="checkbox10" checked="checked">
+                <label for="checkbox10">交通部路政及道安司&ensp;&emsp;&emsp;(02)2388-2051</label><br>
+                <input type="checkbox" id="checkbox11" name="checkbox11" checked="checked">
+                <label for="checkbox11">交通部複式通報輔助窗口&ensp;(02)2349-2886</label><br>
+                <input type="checkbox" id="checkbox12" name="checkbox12" checked="checked">
+                <label for="checkbox12">公路局局長&ensp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;(02)2307-2617</label><br>
+                <input type="checkbox" id="checkbox13" name="checkbox13" checked="checked">
+                <label for="checkbox13">公路局副局長室、主任秘書室、總工程司室</label><br>
+                &ensp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;(02)2307-0015<br>
+                <input type="checkbox" id="checkbox14" name="checkbox14" checked="checked">
+                <label for="checkbox14">公路局複式通報聯絡窗口&ensp;(02)2307-0069</label><br>
+                &emsp;&emsp;(公路防災中心)<br>
+                <input type="checkbox" id="checkbox15" name="checkbox15" checked="checked">
+                <label for="checkbox15">公路局運輸組(營業車)&ensp;&emsp;(02)2307-0245</label><br>
+                &emsp;&emsp;&emsp;&emsp;&emsp;監理組(自用車)&ensp;&emsp;(02)2307-0193<br>
+                <input type="checkbox" id="checkbox16" name="checkbox16" checked="checked">
+                <label for="checkbox16">公路局養路組&ensp;&emsp;&emsp;&emsp;&emsp;&emsp;(02)2307-0107</label><br>
+                <input type="checkbox" id="checkbox17" name="checkbox17" checked="checked">
+                <label for="checkbox17">公路局工務組&ensp;&emsp;&emsp;&emsp;&emsp;&emsp;(02)2307-0109</label><br>
+                <input type="checkbox" id="checkbox18" name="checkbox18" checked="checked">
+                <label for="checkbox18">公路局秘書室&ensp;&emsp;&emsp;&emsp;&emsp;&emsp;(02)2307-0039</label><br>
+                <input type="checkbox" id="checkbox19" name="checkbox19" checked="checked">
+                <label for="checkbox19">公路局政風室&ensp;&emsp;&emsp;&emsp;&emsp;&emsp;(02)2307-0489</label><br>
+                <input type="checkbox" id="checkbox20" name="checkbox20" checked="checked">
+                <label for="checkbox20">公路局公關科&ensp;&emsp;&emsp;&emsp;&emsp;&emsp;(02)2307-0019</label><br>
+                <input type="checkbox" id="checkbox21" name="checkbox21">
+                <label for="checkbox21">警廣路況中心&ensp;&emsp;&emsp;&emsp;&emsp;&emsp;(02)2388-7905</label><br>
+            </td>
+            <td style="font-size:15px;"><b>通報別</b></td>
+            <td colspan="4" style="font-size: 18px;">
+                <input type="radio" name="warning" id="warning1" value="ini_warn" onchange="updateInputState_1()"
+                    checked="checked"><b>初報</b>
+                <input type="radio" name="warning" id="warning2" value="con_warn" onchange="updateInputState_1()"><b>續報（
+                    <select name="con_warn_time" id="warning2_1" style="width: 60px;font-size: 18px;" disabled>
+                        <option value="con_warn_time_01" selected>1</option>
+                        <option value="con_warn_time_02">2</option>
+                        <option value="con_warn_time_03">3</option>
+                        <option value="con_warn_time_04">4</option>
+                        <option value="con_warn_time_05">5</option>
+                        <option value="con_warn_time_06">6</option>
+                        <option value="con_warn_time_07">7</option>
+                        <option value="con_warn_time_08">8</option>
+                        <option value="con_warn_time_09">9</option>
+                        <option value="con_warn_time_10">10</option>
+                        <option value="con_warn_time_11">11</option>
+                        <option value="con_warn_time_12">12</option>
+                        <option value="con_warn_time_13">13</option>
+                        <option value="con_warn_time_14">14</option>
+                        <option value="con_warn_time_15">15</option>
+                        <option value="con_warn_time_16">16</option>
+                        <option value="con_warn_time_17">17</option>
+                        <option value="con_warn_time_18">18</option>
+                        <option value="con_warn_time_19">19</option>
+                        <option value="con_warn_time_20">20</option>
+                        <option value="con_warn_time_21">21</option>
+                        <option value="con_warn_time_22">22</option>
+                        <option value="con_warn_time_23">23</option>
+                        <option value="con_warn_time_24">24</option>
+                        <option value="con_warn_time_25">25</option>
+                        <option value="con_warn_time_26">26</option>
+                        <option value="con_warn_time_27">27</option>
+                        <option value="con_warn_time_28">28</option>
+                        <option value="con_warn_time_29">29</option>
+                        <option value="con_warn_time_30">30</option>
+                    </select>
+                    ）</b><input type="radio" name="warning" id="warning3" value="fin_warn"
+                    onchange="updateInputState_1()"><b>結報</b>
+                <p>
+                    <input type="radio" name="warning" id="warning4" value="empty_warn" onchange="updateInputState_1()">
+                    <input type="text" id="inputText_1.3" name="warning_1" style="font-size: 18px;" size="22" disabled>
+            </td>
+        </tr>
+        <tr>
+            <td style="font-size:15px;"><b>通報人員</b></td>
+            <td colspan="4" style="font-size: 18px;">
+                <b>單位：
+                    <select name="company_list" id="company_list" style="width: 200px;font-size: 18px;"
+                        onchange="updateInput()">
+                        <option value="company_01" selected>桃園監理站</option>
+                        <option value="company_02">中壢監理站</option>
+                        <option value="company_03">新竹區監理所</option>
+                        <option value="company_04">新竹市監理站</option>
+                        <option value="company_05">苗栗監理站</option>
+                    </select>
+                    <p>
+                        職稱：
+                        <input type="text" id="inputText_1.1" name="job_1" value="站長" style="font-size: 18px;"
+                            size="14">
+                    <p>
+                        姓名：
+                        <input type="text" id="inputText_1.2" name="name_1" value="黃成民" style="font-size: 18px;"
+                            size="14">
+                </b>
+            </td>
+        </tr>
+        <tr>
+            <td style="font-size:15px;"><b>電 話</b></td>
+            <td colspan="2">
+                <textarea id="inputText_2" style="font-size: 15px;">(03)3664222*303</textarea>
+            </td>
+            <td style="width: 30px;"><b>傳 真</b></td>
+            <td>
+                <textarea id="inputText_3" style="font-size: 15px;">(03)3778217</textarea>
+            </td>
+        </tr>
+        <tr>
+            <td style="font-size:16px;width: 100px;"><b>災害類別</b></td>
+            <td style="font-size:16px;width: 220px;"><b>交通事故</b></td>
+            <td></td>
+            <td style="width: 40px;"></td>
+            <td style="font-size:16px;width: 70px;"><b>災害規模</b></td>
+            <td colspan="2">
+                <input type="radio" name="warning_level" value="A_level" id="radioOption_1"
+                    onchange="checkCheckbox_1()"><b>甲級</b>
+                <input type="radio" name="warning_level" value="B_level" id="radioOption_2" onchange="checkCheckbox_2()"
+                    checked="checked"><b>乙級</b>
+            </td>
+
+        </tr>
+        <tr>
+            <td style="font-size:16px"><b>
+                    災害防救<br>
+                    主管機關</b></td>
+            <td colspan="4">
+                <input type="radio" id="radio1" name="police_list" value="police01_va" checked="checked"
+                    onchange="updateInputState()">
+                <select id="secondSelect" style="width: 380px;font-size: 16px;" onchange="updateInput_1()">
+                    <option value="suboption1" selected>內政部警政署國道公路警察局第一公路警察大隊</option>
+                    <option value="suboption6">內政部警政署國道公路警察局第六公路警察大隊</option>
+                    <option value="suboption_ty">桃園市政府警察局交通警察大隊</option>
+                </select>
+                <p>
+                    <input type="radio" id="radio2" name="police_list" value="police02_va"
+                        onchange="updateInputState()">
+                    <input type="text" id="inputText_4" name="police_empty" style="width: 370px;font-size: 16px;"
+                        disabled>
+            </td>
+            <td colspan="2">
+                <b>電話：</b><input type="text" id="inputText_5" name="police_tel_1" value="02-2909-9367"
+                    style="font-size: 16px;" size="10">
+                <p>
+                    <b>電話：</b><input type="text" id="inputText_6" name="police_tel_2" style="font-size: 16px;" size="10"
+                        disabled>
+            </td>
+        </tr>
+        <tr>
+            <td style="font-size:16px"><b>發生時間</b></td>
+            <td colspan="6">
+                <input type="text" id="inputText_7" name="date_2" placeholder="年 月 日 午 時 分..." style="font-size: 18px;"
+                    size="50">
+            </td>
+        </tr>
+        <tr>
+            <td style="font-size:16px"><b>災害地點</b></td>
+            <td colspan="6">
+                <input type="text" id="inputText_8" name="loacion_1" placeholder="國道1號..." style="font-size: 18px;"
+                    size="50">
+            </td>
+        </tr>
+        <tr>
+            <td style="font-size:16px"><b>現場指揮官</b></td>
+            <td colspan="6">
+                <input type="text" id="inputText_9" name="loacion_1" placeholder="單位： 職稱： 姓名： 聯繫電話： "
+                    style="font-size: 18px;" size="50">
+            </td>
+        </tr>
+        <tr>
+            <td style="font-size:16px"><b>發生原因</b></td>
+            <td colspan="6">
+                <p></p>
+                <textarea id="inputText_10" oninput="autoResize()"></textarea>
+            </td>
+        <tr>
+            <td style="font-size:16px"><b>現場狀況</b></td>
+            <td colspan="6">
+                <input type="radio" name="condition_1" id="con_1" onchange="checkCheckbox_3()"
+                    checked="checked"><b>現場事故排除中</b>
+                <br>
+                <input type="radio" name="condition_1" id="con_2"
+                    onchange="checkCheckbox_3()"><b>現場事故已排除，排除時間：</b><input type="text" id="inputText_11"
+                    name="condition_1_1" style="font-size: 16px;" size="40" disabled>
+                <br>
+                <input type="radio" name="condition_1" id="con_3" onchange="checkCheckbox_3()"><b>其他：</b>
+                <input type="text" id="inputText_12" name="condition_1_2" style="font-size: 16px;" size="55" disabled>
+            </td>
+        </tr>
+        <tr>
+            <td style="font-size:16px"><b>傷亡/損失（壞）情形</b></td>
+            <td colspan="6"><b>
+                    死亡人數：<input type="text" id="inputText_13" name="casualties_1" style="font-size: 16px;"
+                        size="30"><br>
+                    失蹤人數：<input type="text" id="inputText_14" name="casualties_2" style="font-size: 16px;"
+                        size="30"><br>
+                    傷患人數：<input type="text" id="inputText_15" name="casualties_3" style="font-size: 16px;"
+                        size="30"><br>
+                    損失狀況：<input type="text" id="inputText_16" name="casualties_4" style="font-size: 16px;"
+                        size="30"><br>
+                </b>
+            </td>
+        </tr>
+        <tr>
+            <td style="font-size:16px"><b>請求支援事項</b></td>
+            <td colspan="6">
+                <input type="radio" name="support_1" id="supp_1" onchange="checkCheckbox_4()" checked="checked"><b>無</b>
+                <br>
+                <input type="radio" name="support_1" id="supp_2" onchange="checkCheckbox_4()"><b>有，機關（單位）：</b><input
+                    type="text" id="inputText_17" name="supp_2_1" style="font-size: 16px;" size="40"
+                    disabled><br><b>&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;<span id="support_label">支援事項：</span></b><input
+                    type="text" id="inputText_18" name="supp_2_2" style="font-size: 16px;" size="40" disabled>
+            </td>
+        </tr>
+        <tr>
+            <td style="font-size:16px"><b>應變措施</b></td>
+            <td colspan="6"><b>
+                    <input type="checkbox" id="checkbox22" name="checkbox22" onchange="checkCheckbox_5()"
+                        checked="checked">
+                    <label for="checkbox22" id="text_label_22">未成立緊急應變小組</label><br>
+
+                    <input type="checkbox" id="checkbox23" name="checkbox23" onchange="checkCheckbox_5()">
+                    <label for="checkbox23" id="text_label_23">成立緊急應變小組，日期時間：</label><input type="text"
+                        id="inputText_19" style="font-size: 16px;" size="30" placeholder="年 月 日 時 分..." disabled><br>
+
+                    <input type="checkbox" id="checkbox24" name="checkbox24" onchange="checkCheckbox_5()">
+                    <label for="checkbox24" id="text_label_24">解除緊急應變小組，日期時間：</label><input type="text"
+                        id="inputText_20" style="font-size: 16px;" size="30" placeholder="年 月 日 時 分..." disabled><br>
+
+                    <input type="checkbox" id="checkbox25" name="checkbox25" onchange="checkCheckbox_5()">
+                    <label for="checkbox25" id="text_label_25">其他作為：</label><input type="text" id="inputText_21"
+                        style="font-size: 16px;" size="45" disabled><br>
+                </b>
+            </td>
+        </tr>
+        <tr>
+            <td style="font-size:16px"><b>備註</b></td>
+            <td colspan="6">
+                <textarea id="inputText_26" oninput="autoResize_1()"></textarea>
+            </td>
+        </tr>
+    </table>
+    <!--
+    <br>
+
+    <button id="generateBtn" onclick="generatePDF()">生成 PDF_ver1.10</button>
+-->
+    <!--
+    <script src="html2pdf.js-master/dist/html2pdf.bundle.js"></script>
+    
+    <script src="https://rawgit.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.7.1/jspdf.plugin.autotable.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.js"></script>-->
+    <script src="script.js"></script>
+</body>
+
+</html>
