@@ -700,6 +700,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // 设置初始状态为灰色
     var con3Label = document.querySelector('#con_3 + b');
     var con2Label = document.querySelector('#con_2 + b');
+    var con1Label = document.querySelector('#con_1 + b');
     //var radioOption_1_Label = document.querySelector('#radioOption_1 + b');
     //var warning2_Label = document.querySelector('#warning2 + b');
     //var warning3_Label = document.querySelector('#warning3 + b');
@@ -708,7 +709,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var text_23 = document.getElementById("text_label_23");
     var text_24 = document.getElementById("text_label_24");
     var text_25 = document.getElementById("text_label_25");
-
+    con1Label.classList.add('gray-text');
     con2Label.classList.add('gray-text');
     con3Label.classList.add('gray-text');
     //radioOption_1_Label.classList.add('gray-text');
@@ -729,6 +730,7 @@ function checkCheckbox_3() { //現場狀況選擇
     var con1Labe3 = radio3.nextElementSibling; // Get the <b> element after the radio
     var inputText2 = document.getElementById("inputText_11");
     var inputText3 = document.getElementById("inputText_12");
+    var label = document.getElementById("label005");
 
     // 根据选中的 radio 按钮，设置对应的 input 文本框状态
     if (radio1.checked) {
@@ -737,6 +739,8 @@ function checkCheckbox_3() { //現場狀況選擇
         con1Label.classList.remove('gray-text'); // Remove the gray-text class
         con1Labe2.classList.add('gray-text'); // Add the gray-text class
         con1Labe3.classList.add('gray-text'); // Add the gray-text class
+        label.classList.remove("red");
+        label.classList.add("black");
     }
     if (radio2.checked) {
         inputText2.disabled = false;  // 開啟输入框
@@ -745,6 +749,8 @@ function checkCheckbox_3() { //現場狀況選擇
         con1Label.classList.add('gray-text'); // Remove the gray-text class
         con1Labe2.classList.remove('gray-text'); // Add the gray-text class
         con1Labe3.classList.add('gray-text'); // Add the gray-text class
+        label.classList.remove("red");
+        label.classList.add("black");
     }
     if (radio3.checked) {
         inputText2.disabled = true;  // 進用输入框
@@ -753,6 +759,8 @@ function checkCheckbox_3() { //現場狀況選擇
         con1Label.classList.add('gray-text'); // Remove the gray-text class
         con1Labe2.classList.add('gray-text'); // Add the gray-text class
         con1Labe3.classList.remove('gray-text'); // Add the gray-text class
+        label.classList.remove("red");
+        label.classList.add("black");
     }
 
 }
