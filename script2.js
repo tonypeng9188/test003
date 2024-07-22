@@ -390,7 +390,7 @@ function updateInput() {
     }
     if (selectElement.value === "company_02") {
         inputElement_1_1.value = "站長";
-        inputElement_1_2.value = "吳金全";
+        inputElement_1_2.value = "田文斌";
         inputElement_2.value = "03-4253990分機301";
         inputElement_3.value = "03-4225685";
         inputElement_5.value = "";
@@ -413,7 +413,7 @@ function updateInput() {
     }
     if (selectElement.value === "company_04") {
         inputElement_1_1.value = "站長";
-        inputElement_1_2.value = "周景朗";
+        inputElement_1_2.value = "黃友川";
         inputElement_2.value = "03-5327101*307";
         inputElement_3.value = "03-5319248";
         inputElement_5.value = "";
